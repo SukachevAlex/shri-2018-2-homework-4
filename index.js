@@ -45,14 +45,18 @@ app.route('/api/events')
         res.json(dataFile);
     });
 
-app.all('*', (req, res) => {
-    res.status(404).send('<h1>Page not found</h1>');
-});
+app
+    .use((req, res, next) => {
+        const err = new Error('<h1>Page not found</h1>');
+        res.status(404);
+        next(err);
+    })
+    .use((err, req, res, next) => {
+        res.status(err.status || 500);
+        return res.send(`${err.message}`);
+    });
 
-app.listen(port, (err) => {
-    if (err) {
-        return console.log('error listening port', err);
-    }
+app.listen(port, () => {
     console.log(`Working on port ${port}`);
 });
 
