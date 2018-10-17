@@ -9,6 +9,9 @@
     },
     "author": "",
     "license": "ISC",
+    "engines": {
+        "node": "10.8.0"
+    },
     "devDependencies": {
         "express": "^4.16.4",
         "nodemon": "^1.18.4"
