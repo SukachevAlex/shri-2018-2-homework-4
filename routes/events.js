@@ -12,9 +12,9 @@ router
 
         let types = req.query.type ? req.query.type.split(':') : null;
         let offset = req.query.offset && req.query.offset > 0 ? +req.query.offset : 0;
-        let limit = req.query.limit && req.query.limit > 0 ? +offset + +req.query.limit : -1;
+        let limit = req.query.limit && req.query.limit > 0 ? +offset + +req.query.limit : undefined;
 
-        if (types || offset || limit) {
+        if (req.query.type || req.query.offset || req.query.limit) {
             stream.on('data', function(record) {
                 if (types) {
                     chunks = JSON.parse(record).events.filter(el =>
