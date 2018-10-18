@@ -8,9 +8,11 @@
 
 ## Ссылка на проект heroku
 
-Хочу задеплоить сервер на heroku (**реализую в ближайшее время**)
+Ссылка на ветку с heroku
+[Ссылка](https://github.com/SukachevAlex/shri-2018-2-homework-4/tree/heroku)
 
-[Ссылка]()
+Ссылка на выложенный на heroku сервер
+[Ссылка](https://shri-homework-4.herokuapp.com/)
 
 ## Основные задачи
 
