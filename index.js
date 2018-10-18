@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 5000
 
 app.use(require('./routes/status'));
 app.use(require('./routes/events'));
@@ -15,6 +15,4 @@ app
         return res.send(`${err.message}`);
     });
 
-app.listen(port, () => {
-    console.log(`Working on port ${port}`);
-});
+app.listen(port, () => console.log(`Listening on ${ port }`))
