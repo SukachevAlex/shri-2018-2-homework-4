@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000
 
+app.use(express.json());
+app.use(express.urlencoded());
+
 app.use(require('./routes/status'));
 app.use(require('./routes/events'));
 app
