@@ -7,8 +7,8 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, "./src/index.js"),
-        video: path.resolve(__dirname, "./src/monitoring.js"),
+        main: path.resolve(__dirname, "./client/src/index.js"),
+        video: path.resolve(__dirname, "./client/src/monitoring.js"),
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -82,18 +82,18 @@ module.exports = {
             filename: "style.css"
         }),
         new HtmlWebpackPlugin({
-            template: "./src/index.html",
+            template: "./client/src/index.html",
             filename: "index.html",
             inject: false
         }),
         new HtmlWebpackPlugin({
-            template: "./src/video_monitoring.html",
+            template: "./client/src/video_monitoring.html",
             filename: "video_monitoring.html",
             inject: false
         }),
         new CopyWebpackPlugin([
-            { from: './src/img', to: 'img' },
-            { from: './src/data', to: 'data' }
+            { from: './client/src/img', to: 'img' },
+            { from: './client/src/data', to: 'data' }
         ])
     ]
 }
